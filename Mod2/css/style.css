@@ -1,0 +1,97 @@
+
+<style>
+
+* { box-sizing: border-box; padding:0; margin:0; }
+
+h1 {
+  text-align: center;
+  font-family: serif;
+}
+
+p {
+  padding-left: 8px;
+  text-align: left;
+  }
+
+
+div {
+  height: 150px;
+  background-color: grey;
+  overflow: auto;
+    }
+
+div > div {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+div > div > div {
+  margin:0;
+  height: auto;
+  text-align: center;
+  font-size: 130%;
+  float: right;
+  border: 1px solid black;
+}
+
+/********** Div for titles **********/
+.pinkttle {
+  background-color: pink;
+
+  width: 25%;
+}
+.redttle {
+  background-color: red;
+
+  width: 25%;
+}
+.yellowttle {
+  background-color: yellow;
+ 
+  width: 25%;
+}
+.textowhite {
+  color: white;
+}
+
+/* Simple Responsive Framework. */
+.row {
+  height: auto;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin:0;
+  background: none;
+     }
+
+/********** Large devices only **********/
+@media (min-width: 992px) {
+  .col-lg-4 {
+    float: left;
+    border: 1px solid black;
+    
+    }
+    .col-lg-4 {
+    width: 32%;
+  }
+  
+ 
+}
+
+/********** Medium devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-6,.col-md-1 {
+    float: left;
+          
+  }
+    .col-md-6 {
+      width: 48%
+      }
+    .col-md-1 {
+      width: 97.5%;
+  }
+}
+
+
+</style>
