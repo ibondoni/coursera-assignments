@@ -23,8 +23,7 @@ div {
 div > div {
   margin-right: 10px;
   margin-bottom: 10px;
-  border: 1px solid black;
-}
+  }
 
 div > div > div {
   margin:0;
@@ -32,7 +31,8 @@ div > div > div {
   text-align: center;
   font-size: 130%;
   float: right;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
 }
 
 /********** Div for titles **********/
@@ -75,7 +75,6 @@ div > div > div {
     .col-lg-4 {
     width: 32%;
   }
-  
  
 }
 
@@ -83,6 +82,7 @@ div > div > div {
 @media (min-width: 768px) and (max-width: 991px) {
   .col-md-6,.col-md-1 {
     float: left;
+    border: 1px solid black;
           
   }
     .col-md-6 {
@@ -93,5 +93,13 @@ div > div > div {
   }
 }
 
+/******* Smaler devices *****/
+
+@media (max-width: 767px) {
+  .col-sm-12 {
+      border: 1px solid black;
+    }
+  }
+}
 
 </style>
