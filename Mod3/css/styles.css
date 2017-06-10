@@ -33,6 +33,10 @@ a.drop-menu-item {
 
 /* MAIN GRID */
 
+p {
+	padding:10px;
+}
+
 div#main-grid {
 	background-color: yellow;
 }
