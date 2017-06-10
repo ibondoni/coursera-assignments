@@ -33,8 +33,12 @@ a.drop-menu-item {
 
 /* MAIN GRID */
 
-p {
-	padding:10px;
+.sub-title {
+	padding-top: 5px;
+}
+
+.paragraph {
+	padding: 10px;
 }
 
 div#main-grid {
