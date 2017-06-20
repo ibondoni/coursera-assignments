@@ -90,7 +90,8 @@ $ajaxUtils.sendGetRequest(
         homeHtmlUrl,
         function (request) {
           var homepage = request.responseText;
-          console.log(homepage) // ***** <---- TODO: STEP 1: Substitute [...] ******
+          console.log(homepage)
+          }  // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
