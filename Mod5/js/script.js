@@ -85,6 +85,7 @@ $ajaxUtils.sendGetRequest(
   allCategoriesUrl, 
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
+    console.log(buildAndShowHomeHTML);
 });
 // *** finish **
 
