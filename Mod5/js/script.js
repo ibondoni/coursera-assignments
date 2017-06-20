@@ -95,9 +95,9 @@ function buildAndShowHomeHTML (categories) {
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
-    function (homeHtml) {
-      this.homepage = homeHtml.responseText;
-      console.log(buildAndShowHomeHTML);
+    function (request) {
+      this.homepage = request.responseText;
+      console.log();
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
