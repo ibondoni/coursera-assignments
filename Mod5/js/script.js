@@ -82,14 +82,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // On first load, show home view
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
-  allCategoriesUrl, function buildAndShowHomeHTML (categories) {
+  allCategoriesUrl, 
+    function buildAndShowHomeHTML (categories) {
 
   // Load home snippet page
-  $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,
-    function (request) {
-      var homepage = request.responseText;
-      console.log(homepage), // ***** <---- TODO: STEP 1: Substitute [...] ******
+      $ajaxUtils.sendGetRequest(
+        homeHtmlUrl,
+        function (request) {
+          var homepage = request.responseText;
+          console.log(homepage) // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
