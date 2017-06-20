@@ -97,7 +97,7 @@ function buildAndShowHomeHTML (categories) {
     homeHtmlUrl,
     function (request) {
       this.homepage = request.responseText;
-      console.log();
+      console.log(this.homepage);
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
