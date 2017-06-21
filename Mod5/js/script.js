@@ -96,8 +96,8 @@ function buildAndShowHomeHTML (categories) {
     $ajaxUtils.sendGetRequest(homeHtmlUrl,
         function (homeHtml) {
           document.querySelector("#main-content")
-          .innerHTML = homeHtml}
-          console.log(homeHtml),
+          .innerHTML = homeHtml; 
+          console.log(homeHtml) },
           
           
 
