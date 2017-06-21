@@ -86,7 +86,7 @@ $ajaxUtils.sendGetRequest(allCategoriesUrl,
       var categories = buildAndShowHomeHTML();
       }, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
-});
+
 // *** finish **
 
 
@@ -97,15 +97,25 @@ function buildAndShowHomeHTML (categories) {
         function (homeHtml) {
           document.querySelector("#main-content")
           .innerHTML = homeHtml; 
-          console.log(homeHtml) 
-          var chosenCategoryShortName = chooseRandomCategory (categories)
-          console.log(chosenCategoryShortName)
+          console.log(homeHtml);
+          },
+
+    false);
+    
+    $ajaxUtils.sendGetRequest(allCategoriesUrl,
+      function (request) {
+        var chosenCategoryShortName = chooseRandomCategory(request);
+        var homeHtmlToInsertIntoMainPage = "'" + chosenCategoryShortName + "'" ;
+        console.log(homeHtmlToInsertIntoMainPage);
+          insertProperty(homeHtmlUrl, "randomCategoryShortName", homeHtmlToInsertIntoMainPage);
 
         },
-          
-          
 
-      
+
+    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+         
+ 
+
 
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
@@ -130,15 +140,24 @@ function buildAndShowHomeHTML (categories) {
       // var homeHtmlToInsertIntoMainPage = ....
 
 
+  
+      
+
+    
+    
+
+}
+
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
 
     
-    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-}
 
+
+          
+          
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
@@ -349,6 +368,7 @@ function insertItemPortionName(html,
   return html;
 }
 
+});
 
 global.$dc = dc;
 
