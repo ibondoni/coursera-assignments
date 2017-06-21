@@ -81,8 +81,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
-$ajaxUtils.sendGetRequest(
-  allCategoriesUrl,
+$ajaxUtils.sendGetRequest(allCategoriesUrl,
     function (request) {
       var categories = buildAndShowHomeHTML();
       }, // ***** <---- TODO: STEP 1: Substitute [...] ******
@@ -98,6 +97,7 @@ function buildAndShowHomeHTML (categories) {
         function (homeHtml) {
           document.querySelector("#main-content")
           .innerHTML = homeHtml;
+          console.log(homeHtml),
           },
           
 
@@ -108,6 +108,7 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
+
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
