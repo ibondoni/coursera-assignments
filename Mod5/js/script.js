@@ -97,7 +97,11 @@ function buildAndShowHomeHTML (categories) {
         function (homeHtml) {
           document.querySelector("#main-content")
           .innerHTML = homeHtml; 
-          console.log(homeHtml) },
+          console.log(homeHtml) 
+          var chosenCategoryShortName = chooseRandomCategory (categories)
+          console.log(chosenCategoryShortName)
+
+        },
           
           
 
@@ -109,6 +113,7 @@ function buildAndShowHomeHTML (categories) {
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
 
+        
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
