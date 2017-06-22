@@ -104,8 +104,8 @@ function buildAndShowHomeHTML (categories) {
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
       $ajaxUtils.sendGetRequest(allCategoriesUrl,
-        function (request) {
-          var ShortName = request.short_name
+        function (res) {
+          var ShortName = res.short_name
           console.log(ShortName)
           var chosenCategoryShortName = chooseRandomCategory(ShortName);
 
