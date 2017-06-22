@@ -105,14 +105,14 @@ function buildAndShowHomeHTML (categories) {
       // var chosenCategoryShortName = ....
       $ajaxUtils.sendGetRequest(allCategoriesUrl,
         function (res) {
-          console.log(res)
+          console.log(res.short_name)
           var chosenCategoryShortName = chooseRandomCategory(res.short_name);
 
           var chosenCategoryShortNameFinal = "'" + chosenCategoryShortName + "'";
           console.log(chosenCategoryShortNameFinal);
               $ajaxUtils.sendGetRequest(homeHtmlUrl,
                 function (homeHtml) {
-                  var homeHtmlToInsertIntoMainPage = insertProperty (insertHtmlstring, "randomCategoryShortName", 
+                  var homeHtmlToInsertIntoMainPage = insertProperty (homeHtml, "randomCategoryShortName", 
                   chosenCategoryShortNameFinal);
                   console.log(homeHtmlToInsertIntoMainPage);
                       insertHtml ("#main-content", homeHtmlToInsertIntoMainPage);
