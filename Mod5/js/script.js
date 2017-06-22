@@ -63,30 +63,13 @@ var switchMenuToActive = function () {
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
 
-// TODO: STEP 0: Look over the code from
-// *** start ***
-// to
-// *** finish ***
-// below.
-// We changed this code to retrieve all categories from the server instead of
-// simply requesting home HTML snippet. We now also have another function
-// called buildAndShowHomeHTML that will receive all the categories from the server
-// and process them: choose random category, retrieve home HTML snippet, insert that
-// random category into the home HTML snippet, and then insert that snippet into our
-// main page (index.html).
-//
-// TODO: STEP 1: Substitute [...] below with the *value* of the function buildAndShowHomeHTML,
-// so it can be called when server responds with the categories data.
-
-// *** start ***
-// On first load, show home view
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
     function () {
     buildAndShowHomeHTML()}, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true);
-   // Explicitely setting the flag to get JSON from server processed into an object literal
+   
 });
 // *** finish **
 
@@ -98,30 +81,21 @@ function buildAndShowHomeHTML (categories) {
   // Load home snippet page
   $ajaxUtils.sendGetRequest(homeHtmlUrl,
     function (homeHtml) {
-
-      // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
-      // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
-      // variable's name implies it expects.
-      // var chosenCategoryShortName = ....
       $ajaxUtils.sendGetRequest(allCategoriesUrl,
         function (res) {
-          console.log(res.short_name)
-          console.log(short_name)
-          console.log(category.short_name)
-          console.log(res.category.short_name)
-          var chosenCategoryShortName = chooseRandomCategory(res.short_name);
-
-          var chosenCategoryShortNameFinal = "'" + chosenCategoryShortName + "'";
-          console.log(chosenCategoryShortNameFinal);
-              $ajaxUtils.sendGetRequest(homeHtmlUrl,
-                function (homeHtml) {
-                  var homeHtmlToInsertIntoMainPage = insertProperty (homeHtml, "randomCategoryShortName", 
-                  chosenCategoryShortNameFinal);
-                  console.log(homeHtmlToInsertIntoMainPage);
-                      insertHtml ("#main-content", homeHtmlToInsertIntoMainPage);
-                }, false);
+          // Load categories, choose one on random and add "'"
+          var chosenCategoryShortName = chooseRandomCategory(res);
+          var chosenCategoryShortNameFinal = "'" + chosenCategoryShortName.short_name + "'";
+            // Load home snipet, insert the HTML property to create the final HTML
+            $ajaxUtils.sendGetRequest(homeHtmlUrl,
+              function (homeHtml) {
+                var homeHtmlToInsertIntoMainPage = insertProperty (homeHtml, "randomCategoryShortName", 
+                chosenCategoryShortNameFinal);
+                    // Insert the final HTML on main-content selector
+                    insertHtml ("#main-content", homeHtmlToInsertIntoMainPage);
+              }, false);
               
-      }, true);
+      });
 
   }, false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
