@@ -105,10 +105,9 @@ function buildAndShowHomeHTML (categories) {
                     document.querySelector("#main-content")
                     .innerHTML = homeHtml; 
                     console.log(homeHtmlToInsertIntoMainPage);
-                    insertHtml("#main-content", homeHtmlToInsertIntoMainPage)
-                                          },
+                    },
           false);
-            
+            insertHtml("#main-content", homeHtmlToInsertIntoMainPage)
         },
 
     false);
