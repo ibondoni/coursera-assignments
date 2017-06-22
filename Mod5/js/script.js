@@ -128,8 +128,7 @@ function buildAndShowHomeHTML (categories) {
           function (insert) {
            var homeHtmlToInsertIntoMainPage = insertProperty (insert, 
            chosenCategoryShortNameFinal);
-          }, 
-        );
+        
                 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
@@ -137,6 +136,8 @@ function buildAndShowHomeHTML (categories) {
       // of how to do that.
       // ....
                   insertHtml ("main-content", homeHtmlToInsertIntoMainPage())
+          }, 
+        );
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
