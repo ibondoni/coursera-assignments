@@ -106,7 +106,7 @@ function buildAndShowHomeHTML (categories) {
       $ajaxUtils.sendGetRequest(allCategoriesUrl,
         function (request) {
           console.log(request)
-          var chosenCategoryShortName = chooseRandomCategory({{short_name}});
+          var chosenCategoryShortName = chooseRandomCategory("#short_name");
           var chosenCategoryShortNameFinal = "'" + chosenCategoryShortName + "'";
           console.log(chosenCategoryShortNameFinal);
               $ajaxUtils.sendGetRequest(homeHtmlUrl,
