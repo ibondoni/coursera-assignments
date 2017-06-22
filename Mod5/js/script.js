@@ -110,8 +110,8 @@ function buildAndShowHomeHTML (categories) {
                   console.log(request);
                  var homeHtmlToInsertIntoMainPage = insertProperty (request, 
                  chosenCategoryShortNameFinal);
-
-       insertHtml ("main-content", homeHtmlToInsertIntoMainPage);
+                console.log(homeHtmlToInsertIntoMainPage);
+       //insertHtml ("main-content", homeHtmlToInsertIntoMainPage);
         
        
                 });
