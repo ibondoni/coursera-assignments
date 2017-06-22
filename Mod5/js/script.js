@@ -114,7 +114,11 @@ function buildAndShowHomeHTML (categories) {
                  chosenCategoryShortNameFinal);
                 console.log(chosenCategoryShortNameFinal);
                 console.log(homeHtmlToInsertIntoMainPage);
-                insertHtml ("main-content", homeHtmlToInsertIntoMainPage);
+                  $ajaxUtils.sendGetRequest(homeHtmlUrl,
+                    function () {
+                      insertHtml ("main-content", homeHtmlToInsertIntoMainPage);
+                      console.log(homeHtmlToInsertIntoMainPage);
+                      }, false);
         
        
                 }, false);
