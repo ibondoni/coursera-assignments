@@ -105,21 +105,20 @@ function buildAndShowHomeHTML (categories) {
       // var chosenCategoryShortName = ....
       $ajaxUtils.sendGetRequest(allCategoriesUrl,
         function (res) {
-          var ShortName = res.short_name
-          console.log(ShortName)
-          var chosenCategoryShortName = chooseRandomCategory(ShortName);
+          console.log(res)
+          var chosenCategoryShortName = chooseRandomCategory(res.short_name);
 
           var chosenCategoryShortNameFinal = "'" + chosenCategoryShortName + "'";
           console.log(chosenCategoryShortNameFinal);
               $ajaxUtils.sendGetRequest(homeHtmlUrl,
-                function (insertHtmlstring) {
+                function (homeHtml) {
                   var homeHtmlToInsertIntoMainPage = insertProperty (insertHtmlstring, "randomCategoryShortName", 
                   chosenCategoryShortNameFinal);
                   console.log(homeHtmlToInsertIntoMainPage);
                       insertHtml ("#main-content", homeHtmlToInsertIntoMainPage);
                 }, false);
               
-      }, false);
+      }, true);
 
   }, false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
